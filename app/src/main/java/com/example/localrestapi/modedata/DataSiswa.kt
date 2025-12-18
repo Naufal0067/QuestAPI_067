@@ -2,21 +2,19 @@ package com.example.localrestapi.modedata
 
 import androidx.room.PrimaryKey
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.Serializer
 
 @Serializable
-data class Siswa(
+data class DataSiswa(
     val id : Int,
     val nama : String,
     val alamat : String,
-    val telepon : String
+    val telpon : String
 )
 
 data class UIStateSiswa(
     val detailSiswa: DetailSiswa = DetailSiswa(),
     val isEntryValid: Boolean = false
 )
-
 
 data class DetailSiswa(
     val id: Int = 0,
@@ -35,4 +33,11 @@ fun DetailSiswa.toDataSiswa(): DataSiswa = DataSiswa(
 fun DataSiswa.toUiStateSiswa(isEntryValid: Boolean = false): UIStateSiswa = UIStateSiswa(
     detailSiswa = this.toDetailSiswa(),
     isEntryValid = isEntryValid
+)
+
+fun DataSiswa.toDetailSiswa(): DetailSiswa = DetailSiswa(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    telpon = telpon
 )
