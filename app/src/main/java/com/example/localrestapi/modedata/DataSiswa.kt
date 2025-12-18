@@ -11,3 +11,10 @@ data class Siswa(
     val alamat : String,
     val telepon : String
 )
+
+data class UIStateSiswa(
+    val detailSiswa: DetailSiswa = DetailSiswa(),
+    val isEntryValid: Boolean = false
+)
+
+
