@@ -1,9 +1,18 @@
 package com.example.localrestapi.repositori
 
+import com.example.localrestapi.apiservice.ServiceApiSiswa
 import com.example.localrestapi.modedata.DataSiswa
 
 interface RepositoriDataSiswa {
     suspend fun getDataSiswa() : List<DataSiswa>
 
     suspend fun postDataSiswa(dataSiswa: DataSiswa) :retrofit2.Response<Void>
+}
+
+class JaringanRepositoryDataSiswa(
+    private val serviceApiSiswa: ServiceApiSiswa
+): RepositoriDataSiswa{
+    override suspend fun getDataSiswa(): List<DataSiswa> = serviceApiSiswa.getSiswa()
+    override suspend fun postDataSiswa(dataSiswa: DataSiswa): retrofit2.Response<Void> = serviceApiSiswa.postSiswa(dataSiswa)
+
 }
