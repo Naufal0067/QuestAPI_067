@@ -1,5 +1,6 @@
 package com.example.localrestapi.repositori
 
+import com.example.localrestapi.apiservice.ServiceApiSiswa
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -18,3 +19,21 @@ class DefaultContainerApp : ContainerApp{
         level = HttpLoggingInterceptor.Level.BODY
     }
 
+    val klien = OkHttpClient.Builder()
+        .addInterceptor(logging)
+        .build()
+
+    private val  retrofit: Retrofit = Retrofit.Builder()
+        .baseUrl(baseurl)
+        .addConverterFactory(
+            Json {
+                ignoreUnknownKeys = true
+                prettyPrint = true
+                isLenient = true
+            }.asConverterFactory("application/json".toMediaType())
+        )
+        .client(klien)
+        .build()
+
+   
+}
