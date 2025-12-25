@@ -166,5 +166,10 @@ private fun DeleteConfirmationDialog(
                 Text(stringResource(R.string.no))
             }
         },
-   
+        confirmButton = {
+            TextButton(onClick = onDeleteConfirm) {
+                Text(stringResource(R.string.yes))
+            }
+        }
+    )
 }
