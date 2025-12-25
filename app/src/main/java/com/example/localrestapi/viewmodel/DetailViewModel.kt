@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.localrestapi.modedata.DataSiswa
 import com.example.localrestapi.repositori.RepositoryDataSiswa
+import com.example.localrestapi.uicontroller.route.DestinasiDetail
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import retrofit2.Response

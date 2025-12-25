@@ -11,6 +11,7 @@ import com.example.localrestapi.modedata.UIStateSiswa
 import com.example.localrestapi.modedata.toDataSiswa
 import com.example.localrestapi.modedata.toUiStateSiswa
 import com.example.localrestapi.repositori.RepositoryDataSiswa
+import com.example.localrestapi.uicontroller.route.DestinasiDetail
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

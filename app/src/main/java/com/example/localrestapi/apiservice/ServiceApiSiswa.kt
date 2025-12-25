@@ -24,3 +24,4 @@ interface ServiceApiSiswa {
     @DELETE("deleteTM.php/{id}")
     suspend fun hapusSatuSiswa(@Query("id") id: Int): retrofit2.Response<Void>
 }
+
