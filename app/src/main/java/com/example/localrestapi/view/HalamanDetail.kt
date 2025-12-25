@@ -55,3 +55,9 @@ fun DetailSiswaScreen(
     }
 }
 
+@Composable
+private fun BodyDetailDataSiswa(
+    statusUIDetail: StatusUIDetail,
+    onDelete: () -> Unit,
+    modifier: Modifier = Modifier
+) {
